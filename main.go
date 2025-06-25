@@ -8,6 +8,7 @@ import (
 	"github.com/charmbracelet/fang"
 	"github.com/spf13/cobra"
 	"github.com/taciturnaxolotl/ctfd-alerts/clients"
+	"github.com/taciturnaxolotl/ctfd-alerts/cmd/server"
 	"github.com/taciturnaxolotl/ctfd-alerts/cmd/status"
 )
 
@@ -33,7 +34,9 @@ competitions by providing real-time updates, notifications, and status informati
 
 		// Create a new CTFd client and add it to context
 		ctfdClient := clients.NewCTFdClient(config.CTFdConfig.ApiBase, config.CTFdConfig.ApiKey)
-		cmd.SetContext(context.WithValue(cmd.Context(), "ctfd_client", ctfdClient))
+		ctx := context.WithValue(cmd.Context(), "ctfd_client", ctfdClient)
+		ctx = context.WithValue(ctx, "config", config)
+		cmd.SetContext(ctx)
 	},
 }
 
@@ -43,6 +46,7 @@ func init() {
 
 	// Add commands
 	cmd.AddCommand(status.StatusCmd)
+	cmd.AddCommand(server.ServerCmd)
 }
 
 func main() {

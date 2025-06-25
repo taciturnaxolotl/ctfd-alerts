@@ -22,6 +22,7 @@ type NtfyConfig struct {
 
 type Config struct {
 	Debug           bool       `toml:"debug"`
+	User            string     `toml:"user"`
 	CTFdConfig      CTFdConfig `toml:"ctfd"`
 	NtfyConfig      NtfyConfig `toml:"ntfy"`
 	MonitorInterval int        `toml:"interval"`
@@ -59,6 +60,10 @@ func loadConfig(path string) (*Config, error) {
 
 	if cfg.NtfyConfig.Topic == "" {
 		return nil, errors.New("ntfy topic cannot be empty")
+	}
+
+	if cfg.User == "" {
+		return nil, errors.New("user cannot be empty")
 	}
 
 	if cfg.MonitorInterval == 0 {

@@ -1,5 +1,6 @@
 debug = true
 interval = 100
+user = "echo_kieran"
 
 [ctfd]
 api_base = "http://163.11.237.79/api/v1"
