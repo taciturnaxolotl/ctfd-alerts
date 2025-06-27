@@ -21,7 +21,7 @@
       packages = forAllSystems ({ pkgs }: {
         default = pkgs.buildGoModule {
           pname = "ctfd-alerts";
-          version = "0.0.1";
+          version = "0.1.0";
           subPackages = [ "." ];  # Build from root directory
           src = self;
           vendorHash = null;
