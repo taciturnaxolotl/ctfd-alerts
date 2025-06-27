@@ -2,7 +2,7 @@
 
 Sends alerts for any arbitrary [CTFd](https://ctfd.io/) instance via [ntfy](https://ntfy.sh/)
 
-![vhs gif of the command being run](https://raw.githubusercontent.com/taciturnaxolotl/carriage/main/.github/images/out.gif)
+![vhs gif of the command being run](https://github.com/taciturnaxolotl/ctfd-alerts/blob/main/.github/images/out.gif?raw=true)
 
 ## Install
 
