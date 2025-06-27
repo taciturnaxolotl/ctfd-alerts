@@ -8,7 +8,7 @@ import (
 	"github.com/charmbracelet/fang"
 	"github.com/spf13/cobra"
 	"github.com/taciturnaxolotl/ctfd-alerts/clients"
-	"github.com/taciturnaxolotl/ctfd-alerts/cmd/server"
+	"github.com/taciturnaxolotl/ctfd-alerts/cmd/serve"
 	"github.com/taciturnaxolotl/ctfd-alerts/cmd/status"
 )
 
@@ -46,7 +46,7 @@ func init() {
 
 	// Add commands
 	cmd.AddCommand(status.StatusCmd)
-	cmd.AddCommand(server.ServerCmd)
+	cmd.AddCommand(serve.ServeCmd)
 }
 
 func main() {

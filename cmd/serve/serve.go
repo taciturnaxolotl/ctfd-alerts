@@ -1,4 +1,4 @@
-package server
+package serve
 
 import (
 	"encoding/json"
@@ -57,9 +57,8 @@ func saveStateToCache(state *MonitorState) error {
 	return nil
 }
 
-// ServerCmd represents the server command
-var ServerCmd = &cobra.Command{
-	Use:   "server",
+var ServeCmd = &cobra.Command{
+	Use:   "serve",
 	Short: "Run monitoring server",
 	Long:  "Continuously monitors CTFd for leaderboard changes and new challenges, sending alerts when events occur",
 	Run:   runServer,
