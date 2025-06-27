@@ -20,8 +20,15 @@ var (
 var cmd = &cobra.Command{
 	Use:   "ctfd-alerts",
 	Short: "A tool for monitoring CTFd competitions",
-	Long: `ctfd-alerts is a command-line tool that helps you monitor CTFd-based
-competitions by providing real-time updates, notifications, and status information.`,
+	Long: `      _    __     _             _           _
+  ___| |_ / _| __| |       __ _| | ___ _ __| |_ ___
+ / __| __| |_ / _, |_____ / _  | |/ _ \ '__| __/ __|
+| (__| |_|  _| (_| |_____| (_| | |  __/ |  | |_\__ \
+ \___|\__|_|  \__,_|      \__,_|_|\___|_|   \__|___/
+
+ctfd-alerts is a command-line tool that helps you monitor CTFd-based
+competitions by sending you ntfy notifications when someone bypasses
+you or a new challenge is announced. You can also use the fancy status command :)`,
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 		configFile, _ := cmd.Flags().GetString("config")
 		var err error
