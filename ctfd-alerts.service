@@ -1,0 +1,16 @@
+[Unit]
+Description=ctfd alerts server
+After=network.target
+
+
+[Service]
+ExecStart=/home/pi/go/bin/ctfd-alerts serve
+Restart=always
+User=pi
+WorkingDirectory=/home/pi/ctfd-alerts
+StandardOutput=journal
+StandardError=journal
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
