@@ -20,8 +20,9 @@ jobs:
       - name: Configure Nix cache
         uses: DeterminateSystems/magic-nix-cache-action@main
 
-      - name: Build releases using flake
-        run: nix run .#ctfd-alerts-build
+      - name: Build for all platforms
+        run: |
+          nix develop -c ctfd-alerts-build
 
       - name: Upload Linux AMD64 binary
         uses: actions/upload-release-asset@v1
